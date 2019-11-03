@@ -22,7 +22,7 @@ if (isset($_POST['update'])) {
   $query = "UPDATE task set title = '$title', description = '$description' WHERE id=$id";
   mysqli_query($conn, $query);
   $_SESSION['message'] = 'La tarea se ha actualizado';
-  $_SESSION['message_type'] = 'warning';
+  $_SESSION['message_type'] = 'primary';
   header('Location: index.php');
 }
 
