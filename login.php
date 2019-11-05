@@ -20,8 +20,9 @@ if (isset($_POST)) {
         $_SESSION['usuario'] = $usuario;
         header('Location: task.php');
     } else {
-
+       
         $_SESSION['error_login'] = "Login incorrecto";
+        header('Location: index.php');
     }
 } else {
     header('Location: index.php');
