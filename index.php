@@ -35,7 +35,6 @@
     $result_tasks = mysqli_query($conn, $query);
 
     while ($row = mysqli_fetch_assoc($result_tasks)) { ?>
-
       <div class="col-md-3 mt-5">
         <div class="card">
 
