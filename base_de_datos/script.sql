@@ -10,3 +10,14 @@ CREATE TABLE task(
 );
 
 DESCRIBE task;
+
+CREATE TABLE login(
+  id int(255) NOT NULL AUTO_INCREMENT,
+  user varchar(20) NOT NULL,
+  password varchar(20) NOT NULL,
+  PRIMARY KEY (id)
+);
+DESCRIBE login;
+
+INSERT INTO login (id, user, password) VALUES
+(1, 'carolina', 'carolina');
