@@ -12,5 +12,5 @@ if (isset($_GET['id'])) {
 
   $_SESSION['message'] = 'La tarea ha sido removido';
   $_SESSION['message_type'] = 'danger';
-  header('Location: index.php');
+  header('Location: task.php');
 }

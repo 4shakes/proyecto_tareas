@@ -1,65 +1,36 @@
 <?php include("db.php"); ?>
-
-<?php include('includes/header.php'); ?>
-
-<main class="container p-4 ">
+<?php include('includes/header.php');
+?>
+<div class="container mt-5">
   <div class="row">
-    <div class="col-md-3">
-      <!-- MENSAJES DE ALERTAS -->
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Login</h5>
+          <hr class="my-4">
+          <form class="form-signin" method="post" action="login.php">
+            <div class="form-label-group">
+              <input type="text" id="inputText" class="form-control" name="user" placeholder="Nombre de usuario" required autofocus>
+              <label for="inputText">Usuario</label>
+            </div>
+            <!-- <div class="form-label-group">
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+              <label for="inputEmail">Email</label>
+            </div> -->
 
-      <?php if (isset($_SESSION['message'])) { ?>
-        <div class="alert alert-<?= $_SESSION['message_type'] ?> alert-dismissible fade show" role="alert">
-          <?= $_SESSION['message'] ?>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+            <div class="form-label-group">
+              <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Contraseña" required>
+              <label for="inputPassword">Password</label>
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">entrar</button>
+
+
+          </form>
         </div>
-      <?php session_unset();
-      } ?>
-
-      <!-- AGREGAR TAREAS-->
-      <div class="card card-body mt-5">
-        <form action="save_task.php" method="POST">
-          <div class="form-group">
-            <input type="text" name="title" class="form-control" placeholder="Titulo de la tarea" required autofocus>
-          </div>
-          <div class="form-group">
-            <textarea name="description" rows="2" class="form-control" placeholder="Descripcion" required></textarea>
-          </div>
-          <input type="submit" name="save_task" class="btn btn-success btn-block" value="Guardar">
-        </form>
       </div>
     </div>
-    <?php
-    $query = "SELECT * FROM task";
-    $result_tasks = mysqli_query($conn, $query);
-
-    while ($row = mysqli_fetch_assoc($result_tasks)) { ?>
-      <div class="col-md-3 mt-5">
-        <div class="card">
-
-          <div class="card-header bg-light">
-            <div class="h3 text-center"><span><?php echo $row['title']; ?></span></div>
-          </div>
-          <div class="card-body bg-light">
-
-            <p class="card-text"><?php echo $row['description']; ?></p>
-          </div>
-          <div class="card-footer text-muted bg-light text-right">
-            <div></div>
-            <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
-              <i class="fas fa-marker"></i>
-            </a>
-            <a href="delete_task.php?id=<?php echo $row['id'] ?>" class="btn btn-danger">
-              <i class="far fa-trash-alt"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-    <?php } ?>
-
   </div>
-</main>
-
-<?php include('includes/footer.php'); ?>
+</div>
+<?php include('includes/footer.php');
+?>

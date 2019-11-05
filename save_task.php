@@ -13,6 +13,5 @@ if (isset($_POST['save_task'])) {
 
   $_SESSION['message'] = 'Tarea agregada correctamente';
   $_SESSION['message_type'] = 'success';
-  header('Location: index.php');
+  header('Location: task.php');
 }
-

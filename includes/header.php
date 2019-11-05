@@ -14,9 +14,3 @@
 </head>
 
 <body class="fondo">
-
-  <nav class="navbar navbar-dark  bg-primary ">
-    <div class="container">
-      <a class="navbar-brand " href="index.php">PROYECTO TAREAS</a>
-    </div>
-  </nav>
